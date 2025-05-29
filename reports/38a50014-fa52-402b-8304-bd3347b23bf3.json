@@ -1,0 +1,15 @@
+{
+  "id": "38a50014-fa52-402b-8304-bd3347b23bf3",
+  "ownerName": "Uriel Dueñas",
+  "phoneNumber": "312 104 4869",
+  "licensePlate": "asdqdw1",
+  "faultDescription": "Check engine light is on. Fault code P0420: Catalyst System Efficiency Below Threshold.",
+  "location": null,
+  "photos": [
+    "photo-1748501279616-2162.jpeg"
+  ],
+  "ownerSignature": "ownerSign-1748501279618-6383.png",
+  "technicianSignature": "techSign-1748501279618-5873.png",
+  "createdAt": "2025-05-29T06:47:59.620Z",
+  "status": "attended"
+}
