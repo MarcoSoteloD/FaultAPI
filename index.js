@@ -59,9 +59,6 @@ app.post('/reports', async (req, res) => {
         if (!ownerSignature) throw new Error('ownerSignature requerida');
         if (!technicianSignature) throw new Error('technicianSignature requerida');
 
-        // Crear carpetas si no existen
-        await ensureDirs();
-
         // Guardar fotos (pueden ser 0 o más)
         const photoFiles = [];
         if (Array.isArray(photos)) {
@@ -158,4 +155,12 @@ app.put('/reports/:id/status', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error actualizando el estado del reporte' });
     }
+});
+
+const PORT = process.env.PORT || 3000; // Usa el puerto de Render o 3000 por defecto para desarrollo local
+app.listen(PORT, '0.0.0.0', () => { // Especificar '0.0.0.0' para asegurar compatibilidad
+    console.log(`Servidor escuchando en el puerto ${PORT} en todas las interfaces de red`);
+    // Asegurarse de que las carpetas existan al iniciar el servidor
+    // Esta llamada ya está al inicio del script, así que podría ser redundante aquí si no se mueve.
+    // Si se mantiene la llamada global a ensureDirs(), esta puede omitirse.
 });
