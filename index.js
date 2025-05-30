@@ -19,6 +19,8 @@ async function ensureDirs() {
     await fs.mkdir(UPLOADS_DIR, { recursive: true });
 }
 
+ensureDirs();
+
 // Función para guardar imagen Base64 en disco
 async function saveBase64Image(base64String, prefix = 'img') {
     const matches = base64String.match(/^data:(.+);base64,(.+)$/);
@@ -156,9 +158,4 @@ app.put('/reports/:id/status', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error actualizando el estado del reporte' });
     }
-});
-
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Backend corriendo en http://localhost:${PORT}`);
 });
